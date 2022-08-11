@@ -8,6 +8,8 @@
   --secondary-bg-color: #f5f4fa;
   --hero-bg-color: #2f303a;
   --pure-black-color: #000000;
+  --basic-btn-color: #afb1b8;
+  --active-btn-color: #f5f4fa;
 }
 
 body {
@@ -112,13 +114,28 @@ p {
   align-items: center;
 }
 
+.contacts-icon-envelope {
+  height: 12px;
+  width: 16px;
+  fill: var(--basic-btn-color);
+}
+
+.contacts-icon-smartphone {
+  height: 16px;
+  width: 10px;
+  fill: var(--basic-btn-color);
+}
+
 .list {
   list-style: none;
 }
 
 .link-nav,
 .contact {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
   font-weight: 500;
   line-height: 1.14;
   letter-spacing: 0.02em;
@@ -135,14 +152,28 @@ p {
   color: var(--secondary-text-color);
 }
 
+.contact:hover .contacts-icon-envelope,
+.contact:focus .contacts-icon-envelope,
+.contact:hover .contacts-icon-smartphone,
+.contact:focus .contacts-icon-smartphone {
+  fill: var(--blue-color);
+}
+
 .contact:hover,
 .contact:focus {
   color: var(--blue-color);
 }
 
 .hero {
+  height: 600px;
+  max-width: 1600px;
   padding: 200px 0;
-  background-color: var(--hero-bg-color);
+  margin: 0 auto;
+  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    url(/images/hero-overlay.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .hero-title {
@@ -184,6 +215,11 @@ p {
   min-width: 200px;
 }
 
+.hero-button:hover,
+.hero-button:focus {
+  background: #188ce8;
+}
+
 .list-benefits {
   display: flex;
   gap: 30px;
@@ -191,6 +227,24 @@ p {
 
 .benefit {
   width: calc(100% / 4);
+}
+
+.benefit-icon-background {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 270px;
+  height: 120px;
+  background-color: var(--secondary-bg-color);
+  border-radius: 4px;
+  margin-bottom: 30px;
+}
+
+.benefit-icon {
+  display: block;
+  width: 70px;
+  height: 70px;
+  align-items: center;
 }
 
 .visually-hidden {
@@ -264,14 +318,125 @@ p {
   line-height: 1.19;
   margin-top: 10px;
   text-align: center;
-  padding-bottom: 30px;
+  margin-bottom: 16px;
 
   color: var(--secondary-text-color);
+}
+
+.social-item {
+  display: block;
+  height: 44px;
+  width: 44px;
+  padding: 12px;
+  border-radius: 50%;
+}
+
+.social-icon {
+  height: 20px;
+  width: 20px;
+  fill: var(--basic-btn-color);
+}
+
+.social-item:hover,
+.social-item:focus {
+  background-color: var(--blue-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.social-item:hover .social-icon,
+.social-item:focus .social-icon {
+  fill: var(--active-btn-color);
+}
+
+.member-social {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  padding-bottom: 30px;
+}
+
+.clients-list {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.client-thumb {
+  display: block;
+  width: 170px;
+  height: 92px;
+  border: 1px solid var(--basic-btn-color);
+  border-radius: 4px;
+  padding: 16px 32px;
+}
+
+.client-logo {
+  width: 106px;
+  height: 60px;
+  fill: var(--basic-btn-color);
+}
+
+.client-thumb:hover,
+.client-thumb:focus {
+  border: 1px solid var(--blue-color);
+}
+
+.client-thumb:hover .client-logo,
+.client-thumb:focus .client-logo {
+  fill: var(--blue-color);
 }
 
 .footer {
   background-color: var(--hero-bg-color);
   padding: 60px 0;
+}
+
+.footer-logoadress {
+  min-width: 231px;
+}
+
+.footer-contatiner {
+  display: flex;
+  gap: 70px;
+  align-items: baseline;
+}
+
+.footer-call {
+  font-weight: 700;
+  line-height: 1.14;
+  text-transform: uppercase;
+
+  color: var(--white-text-color);
+
+  margin-bottom: 20px;
+}
+
+.footer-link {
+  display: block;
+  height: 44px;
+  width: 44px;
+  padding: 12px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+
+.footer-social {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  padding-bottom: 30px;
+}
+
+.footer-icon {
+  height: 20px;
+  width: 20px;
+  fill: var(--white-text-color);
+}
+
+.footer-link:hover,
+.footer-link:focus {
+  background-color: var(--blue-color);
 }
 
 .logo-bot {
@@ -355,11 +520,23 @@ p {
   border-radius: 4px;
 }
 
+.button-port:hover,
+.button-port:focus {
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+}
+
 .list-examples {
   margin-top: 50px;
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
+}
+
+.project-card:hover,
+.project-card:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 .project-name {
